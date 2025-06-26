@@ -8,7 +8,8 @@ import testdata.ProjectData.{emptyFields, loginUrl, passwordText, productTitleTe
 class UserStory1Steps extends ScalaDsl with EN  {
 
 Given("""^the user is on the login page$"""){()=>
-  browserLaunch()
+getUrl(loginUrl)
+
 }
 
   And("""^the user enters correct username and password$"""){()=>
@@ -27,7 +28,8 @@ buttonLogin()
 productPage(productTitleText)
 
   }
-And ("""the user has left username and password fields empty"""){()=>
+
+  And ("""the user has left username and password fields empty"""){()=>
   usernameClick()
   passwordClick()
 

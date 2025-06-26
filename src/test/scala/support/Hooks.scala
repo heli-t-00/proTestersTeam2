@@ -2,6 +2,7 @@ package support
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
+import pages.ProjectPage.browserLaunch
 
 
 class Hooks extends ScalaDsl with EN {
@@ -13,6 +14,7 @@ class Hooks extends ScalaDsl with EN {
     println("Launching browser before scenario...")
     DriverManager.driver = new ChromeDriver(options)
     DriverManager.driver.manage().window().maximize()
+    browserLaunch()
   }
 
   After {

@@ -1,6 +1,7 @@
 package pages
 
 import locators.ProjectLocators.{Login, Password, ProductPageTitle, Username, errorMessage}
+import support.DriverManager.driver
 import utils.Assertion
 object ProjectPage extends BasePage {
 
