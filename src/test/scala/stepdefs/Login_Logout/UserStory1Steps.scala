@@ -1,9 +1,9 @@
 package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.ProjectPage.{browserLaunch, buttonLogin, passwordInput, productPage, userNameInput}
+import pages.ProjectPage.{browserLaunch, buttonLogin, errorMessageOutput, getUrl, passwordClick, passwordInput, productPage, userNameInput, usernameClick}
 import sun.security.util.Password
-import testdata.ProjectData.{passwordText, productTitleText, validUsername}
+import testdata.ProjectData.{emptyFields, loginUrl, passwordText, productTitleText, validUsername}
 
 class UserStory1Steps extends ScalaDsl with EN  {
 
@@ -17,6 +17,7 @@ Given("""^the user is on the login page$"""){()=>
 
   }
 
+
   When("""^the user click login$"""){()=>
 buttonLogin()
   }
@@ -26,5 +27,20 @@ buttonLogin()
 productPage(productTitleText)
 
   }
+And ("""the user has left username and password fields empty"""){()=>
+  usernameClick()
+  passwordClick()
 
+}
+
+  Then("""^an error message should be displayed$""") {()=>
+
+   errorMessageOutput("Epic sadface: Username is required") //incorrect Error message test
+//errorMessageOutput(emptyFields)
+  }
+
+  And("""^the user should not be logged in$"""){() =>
+getUrl(loginUrl)
+
+  }
 }

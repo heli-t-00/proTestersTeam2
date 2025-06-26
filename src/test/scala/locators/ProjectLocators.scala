@@ -12,4 +12,6 @@ object ProjectLocators {
 
   val ProductPageTitle: By =By.className("title")
 
+  val errorMessage: By =By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3\n")
+
 }

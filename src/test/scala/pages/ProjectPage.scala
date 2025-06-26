@@ -1,6 +1,6 @@
 package pages
 
-import locators.ProjectLocators.{Login, Password, ProductPageTitle, Username}
+import locators.ProjectLocators.{Login, Password, ProductPageTitle, Username, errorMessage}
 import utils.Assertion
 object ProjectPage extends BasePage {
 
@@ -21,6 +21,22 @@ object ProjectPage extends BasePage {
 def productPage(text: String): Unit ={
 Assertion.assert(getText(ProductPageTitle),text)
 }
+
+  def usernameClick(): Unit ={
+    clickOn(Username)
+  }
+
+  def passwordClick(): Unit ={
+    clickOn(Password)
+  }
+
+  def errorMessageOutput(text: String): Unit ={
+    Assertion.assert(getText(errorMessage), text)
+  }
+
+  def getUrl(text: String): Unit={
+    Assertion.assert(driver.getCurrentUrl, text)
+  }
 
 
 
