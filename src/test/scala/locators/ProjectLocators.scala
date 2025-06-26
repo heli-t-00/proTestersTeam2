@@ -6,6 +6,12 @@ object ProjectLocators {
 
   // Login Page
 
-  val Login:   By = By.cssSelector("input[type='submit']")
+  val Username: By = By.id("user-name")
+  val Password: By = By.id("password")
+  val Login:   By = By.id("login-button")
+
+  val ProductPageTitle: By =By.className("title")
+
+  val errorMessage: By =By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3\n")
 
 }

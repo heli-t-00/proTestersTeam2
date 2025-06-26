@@ -2,12 +2,14 @@ package pages
 
 import org.openqa.selenium.{By, WebDriver, WebElement}
 import support.DriverManager
+import support.DriverManager.driver
 import utils.ConfigReader
 
 trait BasePage {
-  val driver: WebDriver = DriverManager.driver
+
 
   def browserLaunch(): Unit = {
+    val driver: WebDriver = DriverManager.driver
     val testUrl = ConfigReader.get("base.url")
     driver.get(testUrl)
   }
