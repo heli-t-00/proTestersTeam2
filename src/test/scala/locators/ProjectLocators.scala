@@ -6,6 +6,10 @@ object ProjectLocators {
 
   // Login Page
 
-  val Login:   By = By.cssSelector("input[type='submit']")
+  val Username: By = By.id("user-name")
+  val Password: By = By.id("password")
+  val Login:   By = By.id("login-button")
+
+  val ProductPageTitle: By =By.className("title")
 
 }
