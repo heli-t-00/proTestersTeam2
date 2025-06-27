@@ -14,4 +14,8 @@ object ProjectLocators {
 
   val errorMessage: By =By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3\n")
 
+  val menuButton: By = By.id("react-burger-menu-btn")
+
+  val logoutLink:By = By.id("logout_sidebar_link")
+
 }
