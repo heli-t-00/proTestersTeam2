@@ -1,7 +1,7 @@
 package stepdefs.Cart
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.ProjectPage.{clickOn, getUrl}
+import pages.ProjectPage.{buttonCart, buttonContinue, clickOn, getUrl}
 import testdata.ProjectData.{cartUrl, productUrl}
 
 class UserStory8Steps extends ScalaDsl with EN {
@@ -14,23 +14,23 @@ class UserStory8Steps extends ScalaDsl with EN {
 
   //AND the user is take to the product listing page - (Found in Login Steps)
 
-  And("""the user is taken to the product listing page""") { () =>
-    getUrl(productUrl)
-    println("TEST")
 
-  }
 
   When("""the user click the cart icon""") { () =>
-    clickOn()
+    buttonCart()
   }
 
   Then("""the user navigates to cart page""") { () =>
     getUrl(cartUrl)
-    println("TEST")
+
   }
 
-  Then("""the user navigates back to the product listing page""") { () =>
-    getUrl(cartUrl)
+  Then("""the user click on 'Continue shopping' button""") { () =>
+    buttonContinue()
+  }
+
+  And("""the user navigates back to the product listing page""") { () =>
+    getUrl(productUrl)
     println("TEST")
   }
 
