@@ -1,7 +1,7 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton}
 import support.DriverManager.driver
 import utils.Assertion
 
@@ -62,6 +62,19 @@ object ProjectPage extends BasePage {
 
   def getUrl(text: String): Unit = {
     Assertion.assert(driver.getCurrentUrl, text)
+  }
+
+
+  def menuClick(): Unit = {
+    clickOn(menuButton)
+  }
+
+  def logoutClick(): Unit = {
+    clickOn(logoutLink)
+  }
+
+  def logoutVisible(): Unit = {
+    Assertion.assert(logoutLink, "Logout")
   }
 
   def listCartItems(elist: Seq[String]): Unit = {
