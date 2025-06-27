@@ -2,6 +2,7 @@ package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import pages.ProjectPage.{errorMessageOutput, passwordClick, usernameClick}
+import testdata.ProjectData.emptyFields
 
 
 class UserStory1Steps extends ScalaDsl with EN {
@@ -24,8 +25,8 @@ class UserStory1Steps extends ScalaDsl with EN {
 
   Then("""^an error message should be displayed$""") { () =>
 
-    errorMessageOutput("Epic sadface: Username is required") //incorrect Error message test
-    //errorMessageOutput(emptyFields)
+    //errorMessageOutput("Epic sadface: Username is required") //incorrect Error message test
+    errorMessageOutput(emptyFields)
   }
 
   //AND the user should not be logged in - (Found in Login Steps)
