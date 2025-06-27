@@ -6,24 +6,18 @@ import testdata.ProjectData.{lockedUserErrorText, lockedUsername, loginUrl, pass
 
 class UserStory3Steps extends ScalaDsl with EN {
 
-  Given("""the user is on the login page"""){()=>
-    getUrl(loginUrl)
-  }
+  //GIVEN the user is on the login page - (Found in Login Steps)
 
   And("""the user enters the username and password of a Locked-Out User"""){()=>
     userNameInput(lockedUsername)
     passwordInput(passwordText)
   }
 
-  When("""the user clicks the login button"""){()=>
-    buttonLogin()
-  }
+  //WHEN the user click login - (Found in Login Steps)
 
-  Then("""an error message should be displayed"""){()=>
+  Then("""an error message should be displayed for locked out user"""){()=>
     errorMessageOutput(lockedUserErrorText)
   }
 
-  And("""the user will not be logged in"""){()=>
-    getUrl(loginUrl)
-  }
+  //AND the user should not be logged in - (Found in Login Steps)
 }

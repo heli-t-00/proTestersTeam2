@@ -7,8 +7,8 @@ Feature: User Story 3
 
     And the user enters the username and password of a Locked-Out User
 
-    When the user clicks the login button
+    When the user click login
 
-    Then an error message should be displayed
+    Then an error message should be displayed for locked out user
 
-    And the user will not be logged in
+    And the user should not be logged in
