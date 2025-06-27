@@ -1,6 +1,6 @@
 package pages
 
-import locators.ProjectLocators.{Login, Password, ProductPageTitle, Username, errorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage}
 import support.DriverManager.driver
 import utils.Assertion
 
@@ -20,9 +20,32 @@ object ProjectPage extends BasePage {
     clickOn(Login)
   }
 
+  def buttonCart(): Unit = {
+    clickOn(Cart)
+  }
+
+  def buttonContinue(): Unit = {
+    clickOn(ContinueShop)
+  }
+
+  def iconCart(text: String): Unit = {
+    Assertion.assert(getText(CartIcon), text)
+  }
 
   def productPage(text: String): Unit = {
     Assertion.assert(getText(ProductPageTitle), text)
+  }
+
+  def backpackAdd(): Unit = {
+    clickOn(AddBackpack)
+  }
+
+  def backpackRemove(): Unit = {
+    clickOn(RemoveBackpack)
+  }
+
+  def bikeAdd(): Unit = {
+    clickOn(AddBike)
   }
 
   def usernameClick(): Unit = {

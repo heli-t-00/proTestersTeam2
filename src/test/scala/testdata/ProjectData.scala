@@ -11,4 +11,5 @@ object ProjectData {
   val loginUrl: String ="https://www.saucedemo.com/"
   val productUrl: String ="https://www.saucedemo.com/inventory.html"
   val cartUrl: String ="https://www.saucedemo.com/cart.html"
+
 }
