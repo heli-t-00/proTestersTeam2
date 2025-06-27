@@ -1,4 +1,4 @@
-package stepdefs.Login_Logout
+package stepdefs.Cart
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import pages.ProjectPage.{clickOn, getUrl}
