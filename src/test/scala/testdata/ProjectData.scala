@@ -11,4 +11,6 @@ object ProjectData {
   val loginUrl: String ="https://www.saucedemo.com/"
   val productUrl: String ="https://www.saucedemo.com/inventory.html"
   val cartUrl: String ="https://www.saucedemo.com/cart.html"
+
+  val invalidLoginErrorMess: String = "Epic sadface: Username and password do not match any user in this service"
 }
