@@ -19,6 +19,6 @@ class Hooks extends ScalaDsl with EN {
 
   After {
     println("Closing browser after scenario...")
-    DriverManager.driver.quit()
+    //DriverManager.driver.quit()
   }
 }

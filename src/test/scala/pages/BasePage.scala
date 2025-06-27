@@ -37,4 +37,8 @@ trait BasePage {
     driver.findElement(selector).getText
   }
 
+  def ListGetText(selector: By, i: Int):String = {
+    driver.findElements(selector).get(i).getText
+  }
+
 }

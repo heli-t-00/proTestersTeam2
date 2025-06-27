@@ -1,6 +1,7 @@
 package pages
 
-import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage}
+import com.sun.tools.attach.VirtualMachine.list
+import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage}
 import support.DriverManager.driver
 import utils.Assertion
 
@@ -15,7 +16,6 @@ object ProjectPage extends BasePage {
     inputText(Password, text)
   }
 
-  // — Submit Button —
   def buttonLogin(): Unit = {
     clickOn(Login)
   }
@@ -62,6 +62,12 @@ object ProjectPage extends BasePage {
 
   def getUrl(text: String): Unit = {
     Assertion.assert(driver.getCurrentUrl, text)
+  }
+
+  def listCartItems(elist: Seq[String]): Unit = {
+    for(i <- 0 until elist.size){
+      Assertion.assert(ListGetText(CartList, i), elist(i))
+    }
   }
 
 

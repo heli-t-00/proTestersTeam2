@@ -1,7 +1,9 @@
 package stepdefs.Cart
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.ProjectPage.{backpackAdd, backpackRemove, bikeAdd, buttonCart, buttonContinue, iconCart}
+import pages.ProjectPage.{backpackAdd, backpackRemove, bikeAdd, buttonCart, buttonContinue, iconCart, listCartItems}
+import testdata.ProjectData.{add2List, add2Remove1List}
+
 
 class UserStory7Steps extends ScalaDsl with EN {
 
@@ -18,15 +20,17 @@ class UserStory7Steps extends ScalaDsl with EN {
     bikeAdd()
     iconCart("2")
     buttonCart()
-    buttonContinue()
+    listCartItems(add2List)
   }
 
   When ("""the user selects remove on the products listing page"""){() =>
+    buttonContinue()
     backpackRemove()
   }
 
   Then ("""the item should be removed from the cart"""){() =>
     buttonCart()
+    listCartItems(add2Remove1List)
   }
 
   And ("""the cart icon should update to reflect the change"""){() =>

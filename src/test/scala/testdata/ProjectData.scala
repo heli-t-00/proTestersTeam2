@@ -11,5 +11,7 @@ object ProjectData {
   val loginUrl: String ="https://www.saucedemo.com/"
   val productUrl: String ="https://www.saucedemo.com/inventory.html"
   val cartUrl: String ="https://www.saucedemo.com/cart.html"
+  val add2List: Seq[String] = Seq("Sauce Labs Backpack", "Sauce Labs Bike Light")
+  val add2Remove1List: Seq[String] = Seq("Sauce Labs Bike Light")
 
 }

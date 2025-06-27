@@ -14,7 +14,8 @@ object ProjectLocators {
   val CartIcon: By = By.className("shopping_cart_badge")
   val AddBackpack: By = By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]")
   val AddBike: By = By.xpath("//*[@id=\"add-to-cart-sauce-labs-bike-light\"]")
-  val RemoveBackpack: By = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]")
+  val RemoveBackpack: By = By.id("remove-sauce-labs-backpack")
+  val CartList: By = By.className("inventory_item_name")
 
   val ProductPageTitle: By =By.className("title")
 
