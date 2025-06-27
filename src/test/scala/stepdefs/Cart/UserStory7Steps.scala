@@ -15,26 +15,38 @@ class UserStory7Steps extends ScalaDsl with EN {
 
   //AND the user is take to the product listing page - (Found in Login Steps)
 
+  //Scenario 1:
   And ("""the user has added items to the cart"""){() =>
     backpackAdd()
     bikeAdd()
     iconCart("2")
-    buttonCart()
-    listCartItems(add2List)
   }
 
   When ("""the user selects remove on the products listing page"""){() =>
+    buttonCart()
+    listCartItems(add2List)
     buttonContinue()
     backpackRemove()
+    buttonCart()
   }
 
   Then ("""the item should be removed from the cart"""){() =>
-    buttonCart()
     listCartItems(add2Remove1List)
   }
 
   And ("""the cart icon should update to reflect the change"""){() =>
     iconCart("1")
   }
+
+  //Scenario 2:
+  When ("""the user navigates to the cart"""){() =>
+    buttonCart()
+  }
+
+  And ("""the user selects remove on the cart page"""){() =>
+    backpackRemove()
+  }
+
+
 
 }
