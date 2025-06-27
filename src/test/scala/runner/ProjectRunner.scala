@@ -9,7 +9,7 @@ import org.junit.runner.RunWith                               // Import JUnit’
   glue       = Array("stepdefs", "support"),                 // Packages that contain step definitions, hooks, and other glue code
 
   plugin     = Array("pretty",                                                //  • “pretty” prints colour‑coded steps to the console
-    "html:target/project-cucumber-report.html"                       //  • Generates an HTML report at target/cucumber-report.html
+    "html:target/cucumber-report.html"                       //  • Generates an HTML report at target/cucumber-report.html
   ),
   monochrome = true                                          // Strips ANSI colours from console output for easier reading in plain terminals
 )                                                            // End of @CucumberOptions block
