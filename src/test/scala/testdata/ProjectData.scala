@@ -7,6 +7,8 @@ object ProjectData {
   val lockedUsername: String = "locked_out_user"
   val productTitleText: String = "Products"
   val emptyFields: String = "Username and Password are required" //Empty username and password field error message
+  val emptyUsername: String = "Epic sadface: Username is required" //Empty username and password field error message
+  val emptyPassword: String = "Epic sadface: Password is required" //Empty username and password field error message
   val lockedUserErrorText: String = "Epic sadface: Sorry, this user has been locked out."
   val loginUrl: String ="https://www.saucedemo.com/"
   val productUrl: String ="https://www.saucedemo.com/inventory.html"

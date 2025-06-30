@@ -13,3 +13,15 @@ Feature: User Story 1
     When the user click login
     Then an error message should be displayed
     And the user should not be logged in
+
+    Scenario Outline: Unsuccessful Login empty username or password
+      And  the user has left "<username>" or "<password>" fields empty
+      When the user click login
+      Then a specific error message for "<username>" or "<password>" should be displayed
+      And the user should not be logged in
+
+
+      Examples:
+      | username | password |
+      | standard_user | |
+      |               | secret_sauce |

@@ -1,8 +1,8 @@
 package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.ProjectPage.{errorMessageOutput, passwordClick, usernameClick}
-import testdata.ProjectData.emptyFields
+import pages.ProjectPage.{errorMessageOutput, passwordClick, passwordInput, userNameInput, usernameClick}
+import testdata.ProjectData.{emptyFields, emptyPassword, emptyUsername, passwordText}
 
 
 class UserStory1Steps extends ScalaDsl with EN {
@@ -31,5 +31,24 @@ class UserStory1Steps extends ScalaDsl with EN {
 
   //AND the user should not be logged in - (Found in Login Steps)
 
+
+  // Scenario 3
+  And("""the user has left {string} or {string} fields empty""") { (username: String, password: String) =>
+    userNameInput(username)
+    passwordInput(password)
+  }
+
+  //WHEN the user click login - (Found in Login Steps)
+
+  Then("""a specific error message for {string} or {string} should be displayed""") { (username: String, password: String) =>
+    if(username == ""){
+      errorMessageOutput(emptyUsername)
+    }else if(password == ""){
+      errorMessageOutput(emptyPassword)
+    }
+
+  }
+
+  //AND the user should not be logged in - (Found in Login Steps)
 
 }
