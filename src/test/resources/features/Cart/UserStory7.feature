@@ -8,13 +8,13 @@ Feature: User Story 7
 
   Scenario: Remove items from cart on Products page
 
-    And the user has added items to the cart
+    And the user has added 2 items to the cart
 
-    When the user selects remove on the products listing page
+    When the user selects remove on 1 item on the products listing page
 
     Then the item should be removed from the cart
 
-    And the cart icon should update to reflect the change
+    And the cart icon should update to reflect the 1 item removed
 
 
   Scenario: Remove items from cart on Cart page
@@ -23,8 +23,8 @@ Feature: User Story 7
 
     When the user navigates to the cart
 
-    And the user selects remove on the cart page
+    And the user selects remove on 1 item on the cart page
 
     Then the item should be removed from the cart
 
-    And the cart icon should update to reflect the change
+    And the cart icon should update to reflect the 1 item removed

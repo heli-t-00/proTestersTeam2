@@ -25,6 +25,10 @@ class UserStory8Steps extends ScalaDsl with EN {
 
   }
 
+  Then("""^the user should see the items details listed$""")
+  println("list item details")
+
+
   Then("""the user click on 'Continue shopping' button""") { () =>
     buttonContinue()
   }
@@ -33,5 +37,7 @@ class UserStory8Steps extends ScalaDsl with EN {
     getUrl(productUrl)
     println("TEST")
   }
+
+
 
 }
