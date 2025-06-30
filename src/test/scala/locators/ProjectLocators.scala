@@ -25,4 +25,5 @@ object ProjectLocators {
 
   val logoutLink:By = By.id("logout_sidebar_link")
 
+  val productSort: By = By.className("product_sort_container")
 }
