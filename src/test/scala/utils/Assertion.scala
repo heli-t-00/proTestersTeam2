@@ -10,4 +10,13 @@ object Assertion {
       s"Assertion failed: expected '$expected', but found '$actual'"
     )
   }
+
+  /** Assert that an element is visible */
+  def assertVisible(isVisible: Boolean, elementName: String): Unit = {
+    require(
+      isVisible,
+      s"Assertion failed: '$elementName' is not visible"
+    )
+  }
+
 }

@@ -1,9 +1,13 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton}
+import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, sessionErrorMessage}
+import org.openqa.selenium.{By, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.ExpectedConditions
 import support.DriverManager.driver
-import utils.Assertion
+import utils.{Assertion, WaitUtils}
+
+import scala.xml.NodeSeq.Empty.text
 
 object ProjectPage extends BasePage {
 
@@ -64,18 +68,30 @@ object ProjectPage extends BasePage {
     Assertion.assert(driver.getCurrentUrl, text)
   }
 
-
   def menuClick(): Unit = {
     clickOn(menuButton)
+  }
+
+  def waitForLogoutVisible(): WebElement = {
+    val logoutElement = driver.findElement(logoutLink)
+    WaitUtils.waitForElementVisible(driver, logoutElement, 5)
   }
 
   def logoutClick(): Unit = {
     clickOn(logoutLink)
   }
 
-//  def logoutVisible(): Unit = {
-//    Assertion.assert(logoutLink, "Logout")
-//  }
+  def checkLogoutVisible(): Unit = {
+    Assertion.assertVisible(isVisible(logoutLink), "Logout Link")
+  }
+
+  def sessionEnded(text: String): Unit = {
+    Assertion.assert(getText(sessionErrorMessage), text)
+  }
+
+  def isLoginPageVisible: Boolean = {
+    isVisible(Login)
+  }
 
   def listCartItems(elist: Seq[String]): Unit = {
     for(i <- 0 until elist.size){
