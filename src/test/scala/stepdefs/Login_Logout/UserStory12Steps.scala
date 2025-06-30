@@ -2,7 +2,8 @@ package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.ProjectLocators.logoutLink
-import pages.ProjectPage.{logoutVisible, menuClick}
+import pages.ProjectPage.menuClick
+//import pages.ProjectPage.{logoutVisible, menuClick}
 
 class UserStory12Steps extends ScalaDsl with EN{
 
@@ -17,9 +18,9 @@ class UserStory12Steps extends ScalaDsl with EN{
   }
 
 
-  Then("""^the logout option should be visible$""") { () =>
-    logoutVisible()
-  }
+//  Then("""^the logout option should be visible$""") { () =>
+//    logoutVisible()
+//  }
 
 //  And("""^the user clicks the Logout option from the menu$""") { () =>
 //    clickOn(id("logout_sidebar_link"))

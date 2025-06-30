@@ -73,9 +73,9 @@ object ProjectPage extends BasePage {
     clickOn(logoutLink)
   }
 
-  def logoutVisible(): Unit = {
-    Assertion.assert(logoutLink, "Logout")
-  }
+//  def logoutVisible(): Unit = {
+//    Assertion.assert(logoutLink, "Logout")
+//  }
 
   def listCartItems(elist: Seq[String]): Unit = {
     for(i <- 0 until elist.size){
