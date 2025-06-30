@@ -25,4 +25,6 @@ object ProjectLocators {
 
   val logoutLink:By = By.id("logout_sidebar_link")
 
+  val sessionErrorMessage: By = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]")
+
 }

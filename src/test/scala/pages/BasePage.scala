@@ -1,9 +1,12 @@
 package pages
 
+import locators.ProjectLocators.logoutLink
 import org.openqa.selenium.{By, WebDriver, WebElement}
 import support.DriverManager
 import support.DriverManager.driver
 import utils.ConfigReader
+
+import java.nio.channels.Selector
 
 trait BasePage {
 
@@ -39,6 +42,10 @@ trait BasePage {
 
   def ListGetText(selector: By, i: Int):String = {
     driver.findElements(selector).get(i).getText
+  }
+
+  def isVisible(selector: By): Boolean = {
+    driver.findElement(selector).isDisplayed
   }
 
 }
