@@ -1,4 +1,6 @@
-Feature: Product Sorting
+@wip
+
+Feature: User Story 5 - Product Sorting
 
   Background:
     Given the user is on the login page
@@ -7,10 +9,7 @@ Feature: Product Sorting
     And the user is take to the product listing page
 
 
-
-
   Scenario: Sort product by Name (A to Z)
     When the user clicks on the sort dropdown
-    And the user selects "Name (A to Z)" from the option dropdown
-    Then the product list should update
-    And the products should be ordered alphabetically from A to Z
+    And the user selects Name A to Z from the option dropdown
+    Then  the products should be ordered alphabetically from A to Z

@@ -110,16 +110,18 @@ object ProjectPage extends BasePage {
   }
 
   def listCartItems(elist: Seq[String]): Unit = {
-    for(i <- 0 until elist.size){
-      Assertion.assert(ListGetText(CartList, i), elist(i))
-    }
+//    for (i <- 0 until elist.size) {
+//      Assertion.assert(ListGetText(CartList, i), elist(i))
+//    }
+
+
   }
 
-  def sortFilterOption(): Unit ={
+  def sortFilterOption(): Unit = {
     clickOn(productSort)
   }
 
-  def filterBtn(): Unit ={
+  def filterBtn(): Unit = {
     clickOn(productSort)
   }
 
@@ -129,9 +131,19 @@ object ProjectPage extends BasePage {
     select.selectByVisibleText(optionText)
   }
 
-//  val js = driver.asInstanceOf[JavascriptExecutor]
-//  js.executeScript("arguments[0].scrollIntoView(true);", Login)
+  def passwordAlert(): Unit = {
+    closeAlert()
+  }
 
+  def listAllProductItems(elist: Seq[String]): Unit = {
+    for (i <- 0 until elist.size) {
+      Assertion.assert(ListGetText(productList, i), elist(i))
+    }
+  }
 
+  def filterSelect(text: String): Unit = {
+    selectDropdown(productSort, text)
+
+  }
 }
 

@@ -26,6 +26,7 @@ class LoginSteps extends ScalaDsl with EN {
 
   Then("""^the user is take to the product listing page$""") { () =>
     productPage(productTitleText)
+//    closeAlert()
   }
 
 
