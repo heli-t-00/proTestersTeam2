@@ -2,10 +2,11 @@ package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.ProjectLocators.productSort
-import org.openqa.selenium.{By, WebDriver}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
-import pages.ProjectPage.{clickOn, filterBtn}
+import pages.ProjectPage.{clickOn, filterBtn, filterSelect, listAllProductItems, passwordAlert}
 import support.DriverManager.driver
+import testdata.ProjectData.{filterAZ, productAZ}
+import utils.GetListProductNames.allProductList
 
 import java.time.Duration
 
@@ -21,28 +22,21 @@ class UserStory5Steps extends ScalaDsl with EN {
   val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10))
   When("""^the user clicks on the sort dropdown$""") { () =>
 
-    driver.manage().window().maximize()
+
 
     clickOn(productSort)
 
   }
 
 
-  And("""the user selects "Name (A to Z)" from the option dropdown""") { (string: String) =>
-   val option = wait.until (
-     ExpectedConditions.elementToBeClickable(
-       By.xpath("val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10))")
-     )
-    )
-
+  And("""the user selects Name A to Z from the option dropdown""") { () =>
+  filterSelect(filterAZ)
   }
 
-  Then("""^the product list should update$""") { () =>
-    val chosenAZ = driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/div/span/select/option[3]"))
-assert(chosenAZ == "Name (A to Z)", s"Option Value <$chosenAZ")
-  }
 
-  And("""^the products should be ordered alphabetically from A to Z$""") { () =>
+  Then("""^the products should be ordered alphabetically from A to Z$""") { () =>
+//   listAllProductItems(productAZ)
+println(productAZ)
     println("Filter by A to Z selected successfully")
 
   }

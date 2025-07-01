@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
 import pages.ProjectPage.browserLaunch
 
 
+
 class Hooks extends ScalaDsl with EN {
 
   val options = new ChromeOptions()

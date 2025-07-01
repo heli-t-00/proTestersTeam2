@@ -17,4 +17,6 @@ object ProjectData {
   val add2Remove1List: Seq[String] = Seq("Sauce Labs Bike Light")
   val invalidLoginErrorMess: String = "Epic sadface: Username and password do not match any user in this service"
   val loggedOutUser: String ="Epic sadface: You can only access '/inventory.html' when you are logged in."
+  val productAZ: Seq[String] = Seq("Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket", "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)")
+val filterAZ: String ="Name (A to Z)"
 }

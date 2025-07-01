@@ -30,5 +30,6 @@ object ProjectLocators {
 
   val sessionErrorMessage: By = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]")
 
+  val productList: By = By.xpath("//div[data-test='inventory-item-name']")
 
 }

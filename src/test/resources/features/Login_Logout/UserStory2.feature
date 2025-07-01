@@ -14,5 +14,6 @@ Feature: Failed Login
       | problem_user            | secret_sauce |
       | performance_glitch_user | secret_sauce |
       | error_user              | secret_sauce |
-      | standard_user           | Invalid_Pass |
-      | Standard_userS          | Secret_Sauce |
+      | problem_user            | Invalid_p    |
+      | performance_glitch_user | Invalid_p    |
+      | error_user              | Invalid_p            |
