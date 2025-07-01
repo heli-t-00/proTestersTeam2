@@ -14,6 +14,10 @@ object ProjectLocators {
   val CartIcon: By = By.className("shopping_cart_badge")
   val AddBackpack: By = By.id("add-to-cart-sauce-labs-backpack")
   val AddBike: By = By.id("add-to-cart-sauce-labs-bike-light")
+  val AddTShirt: By = By.id("add-to-cart-sauce-labs-bolt-t-shirt")
+  val AddJacket: By = By.id("add-to-cart-sauce-labs-fleece-jacket")
+  val AddOnesie: By = By.id("add-to-cart-sauce-labs-onesie")
+  val AddRedTShirt: By = By.id("add-to-cart-test.allthethings()-t-shirt-(red)")
   val RemoveBackpack: By = By.id("remove-sauce-labs-backpack")
   val CartList: By = By.className("inventory_item_name")
 

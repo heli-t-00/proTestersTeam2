@@ -26,6 +26,7 @@ class UserStory5Steps extends ScalaDsl with EN {
 
   And("""the user selects Name A to Z from the option dropdown""") { () =>
     filterSelect(filterAZ)
+
   }
 
 
