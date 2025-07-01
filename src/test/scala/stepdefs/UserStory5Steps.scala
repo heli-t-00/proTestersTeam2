@@ -1,4 +1,4 @@
-package stepdefs.Products
+package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 
