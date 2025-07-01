@@ -1,7 +1,7 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productSort, sessionErrorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productList, productPrice, productSort, sessionErrorMessage}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select}
 import support.DriverManager.driver
@@ -145,5 +145,12 @@ object ProjectPage extends BasePage {
     selectDropdown(productSort, text)
 
   }
+
+  def listAllProductPrices(elist: Seq[String]): Unit = {
+    for (i <- 0 until elist.size) {
+      Assertion.assert(ListGetText(productPrice, i), elist(i))
+    }
+  }
+
 }
 
