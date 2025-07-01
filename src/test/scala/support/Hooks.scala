@@ -8,7 +8,7 @@ import pages.ProjectPage.browserLaunch
 class Hooks extends ScalaDsl with EN {
 
   val options = new ChromeOptions()
-  options.addArguments("--headless=new")
+//  options.addArguments("--headless=new")
 
   Before {
     println("Launching browser before scenario...")
@@ -19,6 +19,6 @@ class Hooks extends ScalaDsl with EN {
 
   After {
     println("Closing browser after scenario...")
-    DriverManager.driver.quit()
+//    DriverManager.driver.quit()
   }
 }

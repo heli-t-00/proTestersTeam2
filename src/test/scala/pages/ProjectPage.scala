@@ -1,9 +1,9 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, sessionErrorMessage}
-import org.openqa.selenium.{By, WebDriver, WebElement}
-import org.openqa.selenium.support.ui.ExpectedConditions
+import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productSort, sessionErrorMessage}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedConditions, Select}
 import support.DriverManager.driver
 import utils.{Assertion, WaitUtils}
 
@@ -98,6 +98,23 @@ object ProjectPage extends BasePage {
       Assertion.assert(ListGetText(CartList, i), elist(i))
     }
   }
+
+  def sortFilterOption(): Unit ={
+    clickOn(productSort)
+  }
+
+  def filterBtn(): Unit ={
+    clickOn(productSort)
+  }
+
+  def selectSortOption(optionText: String): Unit = {
+    val dropdown = driver.findElement(productSort)
+    val select = new Select(dropdown)
+    select.selectByVisibleText(optionText)
+  }
+
+  val js = driver.asInstanceOf[JavascriptExecutor]
+  js.executeScript("arguments[0].scrollIntoView(true);", Login)
 
 
 }
