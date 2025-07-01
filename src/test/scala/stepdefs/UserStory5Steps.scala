@@ -21,22 +21,16 @@ class UserStory5Steps extends ScalaDsl with EN {
 
   val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10))
   When("""^the user clicks on the sort dropdown$""") { () =>
-
-
-
     clickOn(productSort)
-
   }
 
   And("""the user selects Name A to Z from the option dropdown""") { () =>
-  filterSelect(filterAZ)
+    filterSelect(filterAZ)
   }
 
 
   Then("""^the products should be ordered alphabetically from A to Z$""") { () =>
-//   listAllProductItems(productAZ)
-println(productAZ)
+    listAllProductItems(productAZ)
     println("Filter by A to Z selected successfully")
-
   }
 }
