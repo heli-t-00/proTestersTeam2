@@ -113,9 +113,6 @@ object ProjectPage extends BasePage {
     select.selectByVisibleText(optionText)
   }
 
-  val js = driver.asInstanceOf[JavascriptExecutor]
-  js.executeScript("arguments[0].scrollIntoView(true);", Login)
-
 
 }
 
