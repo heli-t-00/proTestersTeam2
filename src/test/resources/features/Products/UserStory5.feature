@@ -1,5 +1,6 @@
 @wip
-Feature: Product Sorting
+
+Feature: User Story 5 - Product Sorting
 
   Background:
     Given the user is on the login page

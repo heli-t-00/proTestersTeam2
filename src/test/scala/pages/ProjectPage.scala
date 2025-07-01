@@ -115,6 +115,7 @@ object ProjectPage extends BasePage {
     select.selectByVisibleText(optionText)
   }
 
+
   def passwordAlert(): Unit = {
     closeAlert()
   }
@@ -126,6 +127,7 @@ object ProjectPage extends BasePage {
     for (i <- 0 until elist.size) {
       ListGetText(productList, (i))
     }
+
 
   }
 

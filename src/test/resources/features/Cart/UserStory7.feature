@@ -19,7 +19,7 @@ Feature: User Story 7
 
   Scenario: Remove items from cart on Cart page
 
-    And the user has added items to the cart
+    And the user has added 2 items to the cart
 
     When the user navigates to the cart
 

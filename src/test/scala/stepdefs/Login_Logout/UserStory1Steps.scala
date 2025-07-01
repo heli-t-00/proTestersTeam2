@@ -16,23 +16,8 @@ class UserStory1Steps extends ScalaDsl with EN {
 
   //THEN the user is take to the product listing page - (Found in Login Steps)
 
-  //Scenario 2
-  And("""the user has left username and password fields empty""") { () =>
-    usernameClick()
-    passwordClick()
 
-  }
-
-  Then("""^an error message should be displayed$""") { () =>
-
-    //errorMessageOutput("Epic sadface: Username is required") //incorrect Error message test
-    errorMessageOutput(emptyFields)
-  }
-
-  //AND the user should not be logged in - (Found in Login Steps)
-
-
-  // Scenario 3
+  // Scenario Outline
   And("""the user has left {string} or {string} fields empty""") { (username: String, password: String) =>
     userNameInput(username)
     passwordInput(password)
@@ -41,9 +26,11 @@ class UserStory1Steps extends ScalaDsl with EN {
   //WHEN the user click login - (Found in Login Steps)
 
   Then("""a specific error message for {string} or {string} should be displayed""") { (username: String, password: String) =>
-    if(username == ""){
+    if(username == "" && password == ""){
+      errorMessageOutput(emptyFields)
+    }else if(username == ""){
       errorMessageOutput(emptyUsername)
-    }else if(password == ""){
+    }else if (password == ""){
       errorMessageOutput(emptyPassword)
     }
 
