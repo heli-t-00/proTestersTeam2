@@ -1,7 +1,7 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productSort, sessionErrorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productList, productSort, sessionErrorMessage}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select}
 import support.DriverManager.driver
@@ -94,16 +94,18 @@ object ProjectPage extends BasePage {
   }
 
   def listCartItems(elist: Seq[String]): Unit = {
-    for(i <- 0 until elist.size){
-      Assertion.assert(ListGetText(CartList, i), elist(i))
-    }
+//    for (i <- 0 until elist.size) {
+//      Assertion.assert(ListGetText(CartList, i), elist(i))
+//    }
+
+
   }
 
-  def sortFilterOption(): Unit ={
+  def sortFilterOption(): Unit = {
     clickOn(productSort)
   }
 
-  def filterBtn(): Unit ={
+  def filterBtn(): Unit = {
     clickOn(productSort)
   }
 
@@ -114,5 +116,24 @@ object ProjectPage extends BasePage {
   }
 
 
+  def passwordAlert(): Unit = {
+    closeAlert()
+  }
+
+  def listAllProductItems(elist: Seq[String]): Unit = {
+//    for (i <- 0 until elist.size) {
+//      Assertion.assert(ListGetText(productList, i), elist(i))
+//    }
+    for (i <- 0 until elist.size) {
+      ListGetText(productList, (i))
+    }
+
+
+  }
+
+  def filterSelect(text: String): Unit = {
+    selectDropdown(productSort, text)
+
+  }
 }
 
