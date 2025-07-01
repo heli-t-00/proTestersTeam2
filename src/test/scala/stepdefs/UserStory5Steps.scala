@@ -34,7 +34,6 @@ class UserStory5Steps extends ScalaDsl with EN {
        By.xpath("val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10))")
      )
     )
-
   }
 
   Then("""^the product list should update$""") { () =>

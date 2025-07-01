@@ -1,7 +1,7 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productSort, sessionErrorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productSort, sessionErrorMessage}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select}
 import support.DriverManager.driver
@@ -50,6 +50,22 @@ object ProjectPage extends BasePage {
 
   def bikeAdd(): Unit = {
     clickOn(AddBike)
+  }
+
+  def tshirtAdd(): Unit = {
+    clickOn(AddTShirt)
+  }
+
+  def redtshirtAdd(): Unit = {
+     clickOn(AddRedTShirt)
+  }
+
+  def onesieAdd(): Unit = {
+    clickOn(AddOnesie)
+  }
+
+  def jacketAdd(): Unit = {
+    clickOn(AddJacket)
   }
 
   def usernameClick(): Unit = {
@@ -113,8 +129,8 @@ object ProjectPage extends BasePage {
     select.selectByVisibleText(optionText)
   }
 
-  val js = driver.asInstanceOf[JavascriptExecutor]
-  js.executeScript("arguments[0].scrollIntoView(true);", Login)
+//  val js = driver.asInstanceOf[JavascriptExecutor]
+//  js.executeScript("arguments[0].scrollIntoView(true);", Login)
 
 
 }
