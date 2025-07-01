@@ -47,10 +47,8 @@ trait BasePage {
     driver.findElement(selector).getText
   }
 
-  def ListGetText(selector: By, i: Int): Unit = {
-    val item = driver.findElements(selector).get(i).getText
-   println(item)
-
+  def ListGetText(selector: By, i: Int): String = {
+    driver.findElements(selector).get(i).getText
   }
 
   def isVisible(selector: By): Boolean = {

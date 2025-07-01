@@ -121,14 +121,9 @@ object ProjectPage extends BasePage {
   }
 
   def listAllProductItems(elist: Seq[String]): Unit = {
-//    for (i <- 0 until elist.size) {
-//      Assertion.assert(ListGetText(productList, i), elist(i))
-//    }
     for (i <- 0 until elist.size) {
-      ListGetText(productList, (i))
+      Assertion.assert(ListGetText(productList, i), elist(i))
     }
-
-
   }
 
   def filterSelect(text: String): Unit = {
