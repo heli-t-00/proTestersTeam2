@@ -1,7 +1,7 @@
 package pages
 
 import locators.ProjectLocators.logoutLink
-import org.openqa.selenium.{By, WebDriver, WebElement}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import support.DriverManager
 import support.DriverManager.driver
 import utils.ConfigReader
@@ -47,5 +47,6 @@ trait BasePage {
   def isVisible(selector: By): Boolean = {
     driver.findElement(selector).isDisplayed
   }
+
 
 }
