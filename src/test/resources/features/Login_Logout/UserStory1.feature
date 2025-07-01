@@ -1,4 +1,4 @@
-Feature: User Story 1
+Feature: User Story 1 - Successful Login
 
   Background:
     Given the user is on the login page
@@ -8,11 +8,6 @@ Feature: User Story 1
     When the user click login
     Then the user is take to the product listing page
 
-    Scenario: Unsuccessful Login for returning user
-    And the user has left username and password fields empty
-    When the user click login
-    Then an error message should be displayed
-    And the user should not be logged in
 
     Scenario Outline: Unsuccessful Login empty username or password
       And  the user has left "<username>" or "<password>" fields empty
@@ -23,5 +18,6 @@ Feature: User Story 1
 
       Examples:
       | username | password |
-      | standard_user | |
+      | standard_user |              |
       |               | secret_sauce |
+      |               |              |
