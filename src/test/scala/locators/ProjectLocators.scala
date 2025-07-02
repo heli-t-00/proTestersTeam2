@@ -29,11 +29,15 @@ object ProjectLocators {
 
   val logoutLink:By = By.id("logout_sidebar_link")
 
-
   val productSort: By = By.className("product_sort_container")
 
   val sessionErrorMessage: By = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]")
 
   val productList: By = By.cssSelector("div[data-test='inventory-item-name']")
 
+  val twitterIcon: By = By.cssSelector("a[data-test='social-twitter']")
+  val facebookIcon: By = By.cssSelector("a[data-test='social-facebook']")
+  val linkedInIcon: By = By.cssSelector("a[data-test='social-linkedin']")
+  val footerCopyright: By = By.className("footer_copy")
+  val socialList: By = By.tagName("li")
 }

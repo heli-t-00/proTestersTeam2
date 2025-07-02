@@ -1,4 +1,4 @@
-Feature: User Story 7
+Feature: User Story 7 - Remove from Cart
 
   Background:
     Given the user is on the login page
@@ -10,7 +10,11 @@ Feature: User Story 7
 
     And the user has added 2 items to the cart
 
+    And the user confirms the items are in the cart
+
     When the user selects remove on 1 item on the products listing page
+
+    And the user click the cart icon
 
     Then the item should be removed from the cart
 

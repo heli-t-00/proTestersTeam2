@@ -1,5 +1,3 @@
-@wip
-
 Feature: User Story 5 - Product Sorting
 
   Background:

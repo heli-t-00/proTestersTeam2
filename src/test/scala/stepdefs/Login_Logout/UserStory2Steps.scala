@@ -13,9 +13,7 @@ class UserStory2Steps extends ScalaDsl with EN {
   }
   // When user click login - Found in LoginSteps
 
-  // Then the user should not be logged in - Found in LoginSteps
-
-  And("""an error message should be displayed for invalid credentials""") { () =>
+  Then("""an error message should be displayed for invalid credentials""") { () =>
     errorMessageOutput(invalidLoginErrorMess)
 
   }

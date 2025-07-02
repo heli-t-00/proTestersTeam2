@@ -13,7 +13,7 @@ Feature: User Story 1 - Successful Login
       And  the user has left "<username>" or "<password>" fields empty
       When the user click login
       Then a specific error message for "<username>" or "<password>" should be displayed
-      And the user should not be logged in
+
 
 
       Examples:

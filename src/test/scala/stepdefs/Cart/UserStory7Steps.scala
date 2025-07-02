@@ -22,13 +22,17 @@ class UserStory7Steps extends ScalaDsl with EN {
     iconCart("2")
   }
 
-  When ("""the user selects remove on 1 item on the products listing page"""){() =>
+  And ("""the user confirms the items are in the cart""") { () =>
     buttonCart()
     listCartItems(add2List)
+  }
+
+  When ("""the user selects remove on 1 item on the products listing page"""){() =>
     buttonContinue()
     backpackRemove()
-    buttonCart()
   }
+
+  //AND the user click the cart icon - (Found in User Story 8)
 
   Then ("""the item should be removed from the cart"""){() =>
     listCartItems(add2Remove1List)

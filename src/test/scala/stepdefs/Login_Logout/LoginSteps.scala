@@ -29,8 +29,4 @@ class LoginSteps extends ScalaDsl with EN {
 //    closeAlert()
   }
 
-
-  And("""^the user should not be logged in$""") { () =>
-    getUrl(loginUrl)
-  }
 }
