@@ -4,7 +4,6 @@ import io.cucumber.scala.{EN, ScalaDsl}
 import pages.ProjectPage.{errorMessageOutput, passwordClick, passwordInput, userNameInput, usernameClick}
 import testdata.ProjectData.{emptyFields, emptyPassword, emptyUsername, passwordText}
 
-
 class UserStory1Steps extends ScalaDsl with EN {
 
   //GIVEN the user is on the login page - (Found in Login Steps)
@@ -15,7 +14,6 @@ class UserStory1Steps extends ScalaDsl with EN {
   //WHEN the user click login - (Found in Login Steps)
 
   //THEN the user is take to the product listing page - (Found in Login Steps)
-
 
   // Scenario Outline
   And("""the user has left {string} or {string} fields empty""") { (username: String, password: String) =>
