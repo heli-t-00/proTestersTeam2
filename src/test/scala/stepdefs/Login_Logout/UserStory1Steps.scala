@@ -1,7 +1,7 @@
 package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.ProjectPage.{errorMessageOutput, passwordClick, passwordInput, userNameInput, usernameClick}
+import pages.ProjectPage.{errorMessageOutput, passwordInput, userNameInput}
 import testdata.ProjectData.{emptyFields, emptyPassword, emptyUsername, passwordText}
 
 class UserStory1Steps extends ScalaDsl with EN {
