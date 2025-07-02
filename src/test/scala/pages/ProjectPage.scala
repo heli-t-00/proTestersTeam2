@@ -1,7 +1,7 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productSort, sessionErrorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productList, productSort, sessionErrorMessage}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select}
 import support.DriverManager.driver
