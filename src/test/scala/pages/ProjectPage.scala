@@ -171,8 +171,11 @@ object ProjectPage extends BasePage {
     Assertion.assert(changeTab(), text)
   }
 
-  def getTitle(text: String): Unit = {
-    Assertion.assert(driver.getTitle, text)
+  def listAllProductPrices(elist: Seq[String]): Unit = {
+    for (i <- 0 until elist.size) {
+      Assertion.assert(ListGetText(productPrice, i), elist(i))
+    }
+
   }
 
 }

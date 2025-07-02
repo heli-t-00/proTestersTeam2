@@ -9,10 +9,12 @@ Feature: Failed Login
     Then an error message should be displayed for invalid credentials
 
     Examples:
-      | username                | password     |
-      | problem_user            | secret_sauce |
-      | performance_glitch_user | secret_sauce |
-      | error_user              | secret_sauce |
-      | problem_user            | Invalid_p    |
-      | performance_glitch_user | Invalid_p    |
-      | error_user              | Invalid_p            |
+      | username                | password       |
+      | problem_user            | secret_sauce   |
+      | performance_glitch_user | secret_sauce   |
+      | error_user              | secret_sauce   |
+      | problem_user            | Invalid_p      |
+      | performance_glitch_user | Invalid_p      |
+      | error_user              | Invalid_p      |
+      | Standard_userS          | SSecret_SauceS |
+      | standard_user           | Invalid_p      |

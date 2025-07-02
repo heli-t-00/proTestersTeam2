@@ -38,6 +38,11 @@ object ProjectData {
 
   val productAZ: Seq[String] = Seq("Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket", "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)")
   val filterAZ: String ="Name (A to Z)"
+val productZA: Seq[String] = Seq("Test.allTheThings() T-Shirt (Red)", "Sauce Labs Onesie","Sauce Labs Fleece Jacket", "Sauce Labs Bolt T-Shirt","Sauce Labs Bike Light","Sauce Labs Backpack")
+val filterZA: String ="Name (Z to A)"
 
-
+  val productPriceLoHi: Seq[String] = Seq("$7.99", "$9.99", "$15.99","$15.99", "$29.99", "$49.99")
+  val filterPriceLoHi: String ="Price (low to high)"
+  val productPriceHiLo: Seq[String] = Seq("$49.99", "$29.99", "$15.99", "$15.99", "$9.99", "$7.99")
+  val filterPriceHiLo: String ="Price (high to low)"
 }
