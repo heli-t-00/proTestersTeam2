@@ -24,7 +24,7 @@ class UserStory5Steps extends ScalaDsl with EN {
     clickOn(productSort)
   }
 
-  // Scenerio: Name A to Z
+  // Scenario: Name A to Z
 
   And("""the user selects Name A to Z from the option dropdown""") { () =>
     filterSelect(filterAZ)
