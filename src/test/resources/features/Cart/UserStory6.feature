@@ -1,4 +1,4 @@
-Feature: User Story 6 -
+Feature: User Story 6 - Add Item to Cart
 
   Background:
     Given the user is on the login page

@@ -23,14 +23,12 @@ class Hooks extends ScalaDsl with EN {
   }
 
   After { scenario: Scenario =>
-    if (scenario.isFailed) {
-      println("Scenario failed - attaching screenshot...")
-      val screenshot = DriverManager.driver
-        .asInstanceOf[TakesScreenshot]
-        .getScreenshotAs(OutputType.BYTES)
+    println("Scenario failed - attaching screenshot...")
+    val screenshot = DriverManager.driver
+      .asInstanceOf[TakesScreenshot]
+      .getScreenshotAs(OutputType.BYTES)
 
-      Allure.addAttachment(scenario.getName, new ByteArrayInputStream(screenshot))
-    }
+    Allure.addAttachment(scenario.getName, new ByteArrayInputStream(screenshot))
 
     println("Closing browser after scenario...")
     DriverManager.driver.quit()
