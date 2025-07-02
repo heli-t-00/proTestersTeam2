@@ -10,7 +10,7 @@ class LoginSteps extends ScalaDsl with EN {
   //Covers User Story 1 Scenario 1
 
   Given("""^the user is on the login page$""") { () =>
-    getUrl(loginUrl)
+    isLoginPageVisible
   }
 
   And("""^the user enters correct username and password$""") { () =>
