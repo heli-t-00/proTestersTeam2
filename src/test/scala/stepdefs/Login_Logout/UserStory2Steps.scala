@@ -2,7 +2,8 @@ package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import pages.ProjectPage.{errorMessageOutput, passwordInput, userNameInput}
-import testdata.ProjectData.{invalidLoginErrorMess}
+import testdata.ProjectData.invalidLoginErrorMess
+
 
 class UserStory2Steps extends ScalaDsl with EN {
   // Given user is on login page - Found in LoginSteps
@@ -13,9 +14,7 @@ class UserStory2Steps extends ScalaDsl with EN {
   }
   // When user click login - Found in LoginSteps
 
-  // Then the user should not be logged in - Found in LoginSteps
-
-  And("""an error message should be displayed for invalid credentials""") { () =>
+  Then("""an error message should be displayed for invalid credentials""") { () =>
     errorMessageOutput(invalidLoginErrorMess)
 
   }

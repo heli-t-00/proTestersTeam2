@@ -1,10 +1,11 @@
 package pages
 
 import com.sun.tools.attach.VirtualMachine.list
-import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, logoutLink, menuButton, productList, productSort, sessionErrorMessage}
+import locators.ProjectLocators.{AddBackpack, AddBike, AddJacket, AddOnesie, AddRedTShirt, AddTShirt, Cart, CartIcon, CartList, ContinueShop, Login, Password, ProductPageTitle, RemoveBackpack, Username, errorMessage, facebookIcon, footerCopyright, linkedInIcon, logoutLink, menuButton, productList, productSort, sessionErrorMessage, socialList, twitterIcon}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select}
 import support.DriverManager.driver
+import utils.WaitUtils.waitForElementVisible
 import utils.{Assertion, WaitUtils}
 
 import scala.xml.NodeSeq.Empty.text
@@ -45,6 +46,7 @@ object ProjectPage extends BasePage {
   }
 
   def backpackRemove(): Unit = {
+    waitForElementVisible(driver, driver.findElement(RemoveBackpack), 5)
     clickOn(RemoveBackpack)
   }
 
@@ -110,11 +112,9 @@ object ProjectPage extends BasePage {
   }
 
   def listCartItems(elist: Seq[String]): Unit = {
-//    for (i <- 0 until elist.size) {
-//      Assertion.assert(ListGetText(CartList, i), elist(i))
-//    }
-
-
+    for (i <- 0 until elist.size) {
+      Assertion.assert(ListGetText(CartList, i), elist(i))
+    }
   }
 
   def sortFilterOption(): Unit = {
@@ -143,7 +143,40 @@ object ProjectPage extends BasePage {
 
   def filterSelect(text: String): Unit = {
     selectDropdown(productSort, text)
+  }
+
+  def navigateTwitter(): Unit = {
+    clickOn(twitterIcon)
+  }
+
+  def navigateFacebook(): Unit = {
+    clickOn(facebookIcon)
+  }
+
+  def navigateLinkedIn(): Unit = {
+    clickOn(linkedInIcon)
+  }
+
+  def containsCopyright(text: String): Unit = {
+    Assertion.assert(getText(footerCopyright), text)
+  }
+
+  def containsSocials(elist: Seq[String]): Unit = {
+    for (i <- 0 until elist.size) {
+      Assertion.assert(ListGetText(socialList, i), elist(i))
+    }
+  }
+
+  def socialsTab(text: String): Unit = {
+    Assertion.assert(changeTab(), text)
+  }
+
+  def listAllProductPrices(elist: Seq[String]): Unit = {
+    for (i <- 0 until elist.size) {
+      Assertion.assert(ListGetText(productPrice, i), elist(i))
+    }
 
   }
+
 }
 

@@ -19,5 +19,4 @@ class UserStory3Steps extends ScalaDsl with EN {
     errorMessageOutput(lockedUserErrorText)
   }
 
-  //AND the user should not be logged in - (Found in Login Steps)
 }

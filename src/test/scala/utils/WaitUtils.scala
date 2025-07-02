@@ -41,5 +41,9 @@ object WaitUtils {
     wait.until(condition)
   }
 
+  def waitForPageLoad(driver: WebDriver, element: WebElement, timeoutSeconds: Long): WebElement = {
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
+    wait.until(ExpectedConditions.visibilityOf(element))
+  }
 
 }

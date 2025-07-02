@@ -34,6 +34,4 @@ class UserStory1Steps extends ScalaDsl with EN {
 
   }
 
-  //AND the user should not be logged in - (Found in Login Steps)
-
 }

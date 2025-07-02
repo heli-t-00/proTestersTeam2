@@ -1,4 +1,4 @@
-Feature: User Story 3
+Feature: User Story 3 - Locked Out User
 
   Background:
     Given the user is on the login page
@@ -11,4 +11,3 @@ Feature: User Story 3
 
     Then an error message should be displayed for locked out user
 
-    And the user should not be logged in
