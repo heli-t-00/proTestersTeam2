@@ -1,14 +1,11 @@
 package pages
 
-import locators.ProjectLocators.logoutLink
 import org.openqa.selenium.support.ui.Select
-import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
+import org.openqa.selenium.{By, WebDriver}
 import support.DriverManager
 import support.DriverManager.driver
 import utils.ConfigReader
-import utils.WaitUtils.{setImplicitWait, waitForElementVisible, waitForPageLoad}
-
-import java.nio.channels.Selector
+import utils.WaitUtils.waitForPageLoad
 import scala.jdk.CollectionConverters.IterableHasAsScala
 
 trait BasePage {
@@ -20,23 +17,7 @@ trait BasePage {
     driver.get(testUrl)
   }
 
-  // Locator Identification
-  def findById(id: String): WebElement = driver.findElement(By.id(id))
-
-  def findByName(name: String): WebElement = driver.findElement(By.name(name))
-
-  def findByLinkText(link: String): WebElement = driver.findElement(By.linkText(link))
-
-  def findByPartialLinkText(partialLink: String): WebElement = driver.findElement(By.partialLinkText(partialLink))
-
-  def findByTagName(tag: String): WebElement = driver.findElement(By.tagName(tag))
-
-  def findByCssSelector(css: String): WebElement = driver.findElement(By.cssSelector(css))
-
-  def findByXpath(xpath: String): WebElement = driver.findElement(By.xpath(xpath))
-
   // Common Actions
-
   def inputText(selector: By, text: String): Unit = {
     driver.findElement(selector).sendKeys(text)
   }
@@ -55,11 +36,6 @@ trait BasePage {
 
   def isVisible(selector: By): Boolean = {
     driver.findElement(selector).isDisplayed
-  }
-
-  def closeAlert(): Unit = {
-    val alert = driver.switchTo().alert()
-    alert.accept()
   }
 
   def selectDropdown(selector: By, text: String): Unit = {

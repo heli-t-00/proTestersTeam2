@@ -151,10 +151,5 @@ object ProjectPage extends BasePage {
     WaitUtils.waitForElementVisible(driver, logoutElement, 5)
   }
 
-  //Javascript Method
-  def passwordAlert(): Unit = {
-    closeAlert()
-  }
-
 }
 
