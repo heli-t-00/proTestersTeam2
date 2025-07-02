@@ -1,7 +1,7 @@
 package stepdefs.Cart
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.ProjectPage.{buttonCart, buttonContinue, clickOn, getUrl}
+import pages.ProjectPage.{buttonCart, buttonContinue, getUrl}
 import testdata.ProjectData.{cartUrl, productUrl}
 
 class UserStory8Steps extends ScalaDsl with EN {
