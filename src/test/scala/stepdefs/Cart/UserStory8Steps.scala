@@ -22,7 +22,6 @@ class UserStory8Steps extends ScalaDsl with EN {
 
   Then("""the user navigates to cart page""") { () =>
     getUrl(cartUrl)
-
   }
 
   Then("""the user click on 'Continue shopping' button""") { () =>

@@ -6,8 +6,10 @@ import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import support.DriverManager
 import support.DriverManager.driver
 import utils.ConfigReader
+import utils.WaitUtils.{setImplicitWait, waitForElementVisible, waitForPageLoad}
 
 import java.nio.channels.Selector
+import scala.jdk.CollectionConverters.IterableHasAsScala
 
 trait BasePage {
 
@@ -63,6 +65,21 @@ trait BasePage {
   def selectDropdown(selector: By, text: String): Unit = {
     val select: Select = new Select(driver.findElement(selector))
     select.selectByVisibleText(text)
-
   }
+
+  def changeTab(): String = {
+    val parentWindow = driver.getWindowHandle
+    val allWindows: Seq[String] = driver.getWindowHandles.asScala.toList
+    val it = allWindows.iterator
+        while (it.hasNext){
+          val handle = it.next()
+          if(handle != parentWindow){
+            driver.switchTo().window(handle)
+            waitForPageLoad(driver, driver.findElement(By.tagName("body")), 10)
+//            println(driver.getTitle)
+          }
+        }
+    driver.getTitle
+    }
+
 }

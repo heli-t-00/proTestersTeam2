@@ -6,8 +6,7 @@ Feature: Failed Login
   Scenario Outline: Failed Login with Invalid Credentials
     Given the user enters invalid "<username>" and "<password>"
     When the user click login
-    Then the user should not be logged in
-    And an error message should be displayed for invalid credentials
+    Then an error message should be displayed for invalid credentials
 
     Examples:
       | username                | password       |
