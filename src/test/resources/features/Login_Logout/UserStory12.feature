@@ -1,4 +1,4 @@
-Feature: User Story 12 — Logout
+Feature: User Story 12 - Logout
 
   Background:
     Given the user is on the login page

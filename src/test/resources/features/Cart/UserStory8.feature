@@ -1,4 +1,4 @@
-Feature: View cart contents
+Feature: User Story 8 - View Cart Contents
 
 
   Background:

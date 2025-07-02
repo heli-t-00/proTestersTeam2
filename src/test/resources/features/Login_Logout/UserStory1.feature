@@ -17,7 +17,7 @@ Feature: User Story 1 - Successful Login
 
 
       Examples:
-      | username | password |
+      | username      | password     |
       | standard_user |              |
       |               | secret_sauce |
       |               |              |

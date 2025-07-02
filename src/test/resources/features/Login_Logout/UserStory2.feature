@@ -1,4 +1,4 @@
-Feature: Failed Login
+Feature: User Story 2 - Failed Login
 
   Background:
     Given the user is on the login page

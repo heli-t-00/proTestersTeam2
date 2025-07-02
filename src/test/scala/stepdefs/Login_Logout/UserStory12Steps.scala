@@ -4,8 +4,6 @@ import io.cucumber.scala.{EN, ScalaDsl}
 import pages.ProjectPage.{checkLogoutVisible, isLoginPageVisible, logoutClick, menuClick, sessionEnded, waitForLogoutVisible}
 import support.DriverManager.driver
 import testdata.ProjectData.loggedOutUser
-import locators.ProjectLocators.logoutLink
-import pages.ProjectPage.menuClick
 
 class UserStory12Steps extends ScalaDsl with EN {
 

@@ -1,4 +1,4 @@
-Feature: User Story 7 - Remove from Cart
+Feature: User Story 7 - Remove Item from Cart
 
   Background:
     Given the user is on the login page

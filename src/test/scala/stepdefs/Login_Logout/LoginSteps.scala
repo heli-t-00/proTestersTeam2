@@ -2,7 +2,7 @@ package stepdefs.Login_Logout
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import pages.ProjectPage._
-import testdata.ProjectData.{loginUrl, passwordText, productTitleText, validUsername}
+import testdata.ProjectData.{passwordText, productTitleText, validUsername}
 
 class LoginSteps extends ScalaDsl with EN {
 
@@ -26,7 +26,6 @@ class LoginSteps extends ScalaDsl with EN {
 
   Then("""^the user is take to the product listing page$""") { () =>
     productPage(productTitleText)
-//    closeAlert()
   }
 
 }

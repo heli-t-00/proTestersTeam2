@@ -3,7 +3,6 @@ package support
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
 import pages.ProjectPage.browserLaunch
-import utils.ScreenCapture
 import io.cucumber.scala.Scenario
 import io.qameta.allure.Allure
 import org.openqa.selenium.{OutputType, TakesScreenshot}
@@ -14,7 +13,7 @@ class Hooks extends ScalaDsl with EN {
 
   val options = new ChromeOptions()
 
-  options.addArguments("--headless=new")
+  //options.addArguments("--headless=new")
 
   Before {
     println("Launching browser before scenario...")
@@ -24,14 +23,12 @@ class Hooks extends ScalaDsl with EN {
   }
 
   After { scenario: Scenario =>
-    if (scenario.isFailed) {
-      println("Scenario failed - attaching screenshot...")
-      val screenshot = DriverManager.driver
-        .asInstanceOf[TakesScreenshot]
-        .getScreenshotAs(OutputType.BYTES)
+    println("Scenario failed - attaching screenshot...")
+    val screenshot = DriverManager.driver
+      .asInstanceOf[TakesScreenshot]
+      .getScreenshotAs(OutputType.BYTES)
 
-      Allure.addAttachment(scenario.getName, new ByteArrayInputStream(screenshot))
-    }
+    Allure.addAttachment(scenario.getName, new ByteArrayInputStream(screenshot))
 
     println("Closing browser after scenario...")
     DriverManager.driver.quit()
