@@ -2,11 +2,10 @@ package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.ProjectLocators.productSort
-import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
-import pages.ProjectPage.{clickOn, filterBtn, filterSelect, listAllProductItems, listAllProductPrices, passwordAlert}
+import org.openqa.selenium.support.ui.WebDriverWait
+import pages.ProjectPage.{clickOn, filterSelect, listAllProductItems, listAllProductPrices}
 import support.DriverManager.driver
 import testdata.ProjectData.{filterAZ, filterPriceHiLo, filterPriceLoHi, filterZA, productAZ, productPriceHiLo, productPriceLoHi, productZA}
-import utils.GetListProductNames.allProductList
 
 import java.time.Duration
 
