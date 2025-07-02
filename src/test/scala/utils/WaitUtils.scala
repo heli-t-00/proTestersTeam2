@@ -41,6 +41,10 @@ object WaitUtils {
     wait.until(condition)
   }
 
+  /**
+   * Wait explicitly for the body tag elements to be visible within given timeout.
+   * Uses ExpectedConditions.visibilityOf
+   */
   def waitForPageLoad(driver: WebDriver, element: WebElement, timeoutSeconds: Long): WebElement = {
     val wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
     wait.until(ExpectedConditions.visibilityOf(element))
