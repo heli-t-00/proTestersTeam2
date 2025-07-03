@@ -1,3 +1,4 @@
+@Login
 Feature: User Story 12 - Logout
 
   Background:
@@ -6,10 +7,12 @@ Feature: User Story 12 - Logout
     And the user click login
     And the user is take to the product listing page
 
+  @Navigation
   Scenario: View logout option
     When the user clicks the menu button
     Then the logout option should be visible
 
+  @Navigation
   Scenario: Log out successfully
     When the user clicks the menu button
     And the user clicks the Logout option from the menu

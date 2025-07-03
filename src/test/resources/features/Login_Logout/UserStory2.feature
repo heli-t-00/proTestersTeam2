@@ -1,8 +1,10 @@
+@Login
 Feature: User Story 2 - Failed Login
 
   Background:
     Given the user is on the login page
 
+  @Message
   Scenario Outline: Failed Login with Invalid Credentials
     Given the user enters invalid "<username>" and "<password>"
     When the user click login

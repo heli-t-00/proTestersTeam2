@@ -1,3 +1,4 @@
+@Cart
 Feature: User Story 6 - Add Item to Cart
 
   Background:
@@ -6,6 +7,7 @@ Feature: User Story 6 - Add Item to Cart
     And the user click login
     And the user is take to the product listing page
 
+   @Icon @Add
    Scenario: Item is added to Cart
      When the user has added 6 items to the cart
      Then the items get added to the cart
